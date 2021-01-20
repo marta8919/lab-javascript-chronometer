@@ -44,7 +44,8 @@ class Chronometer {
     let minutes = this.getMinutes()
     let seconds = this.getSeconds()
     console.log("split called")
+    
+    return `0${minutes}:0${seconds}`//problem is, if minutes are two digits, then prints also the 0 in front
 
-    return `0${minutes}:0${seconds}`
   }
 }

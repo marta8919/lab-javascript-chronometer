@@ -48,13 +48,16 @@ function printSeconds(seconds) {
 function printSplit() {
   let newList = document.createElement('li')
 
-  newList.innerHTML = `${chronometer.getMinutes()}:${chronometer.getSeconds()}`
+  let info = chronometer.splitClick()
+
+  console.log(info)
+
+  newList.innerHTML = info
 
   splits.appendChild(newList)
 }
 
 // function clearSplits() {
-//   // ... your code goes here
 // }
 
 function setStopBtn() {
@@ -75,6 +78,7 @@ function setStartBtn() {
 function setResetBtn() {
   btnRight.innerHTML= 'RESET'
   btnRight.setAttribute('class', 'btn reset')
+  //clearSplits()
 }
 
 
@@ -98,5 +102,6 @@ btnRight.addEventListener('click', () => {
     printTime()
   } else {
     setSplitBtn()
+    printSplit()
   }
 });
